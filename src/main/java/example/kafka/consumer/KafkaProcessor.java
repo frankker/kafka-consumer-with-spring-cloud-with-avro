@@ -10,7 +10,11 @@ import org.springframework.stereotype.Component;
 public interface KafkaProcessor {
 
   String ALERT_INPUT = "alert-input";
+  String ASSET_INPUT = "asset-input";
 
   @Input(ALERT_INPUT)
   SubscribableChannel processMessage();
+
+  @Input(ASSET_INPUT)
+  SubscribableChannel consumeAssetEvent();
 }

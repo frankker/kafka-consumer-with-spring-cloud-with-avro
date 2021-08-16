@@ -17,6 +17,12 @@ spring:
           group: group-2
           concurrency: 3
           binder: kafka
+        asset-input:
+          destination: asset003
+          content-type: application/*+avro
+          group: group-2
+          concurrency: 3
+          binder: kafka
 #        alert-output:
 #          destination: alert7
 #          content-type: application/*+avro

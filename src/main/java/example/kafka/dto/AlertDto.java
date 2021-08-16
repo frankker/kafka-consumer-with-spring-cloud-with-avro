@@ -5,12 +5,10 @@
  */
 package example.kafka.dto;
 
-import org.apache.avro.generic.GenericArray;
-import org.apache.avro.specific.SpecificData;
-import org.apache.avro.util.Utf8;
-import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
+import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.SchemaStore;
+import org.apache.avro.specific.SpecificData;
 
 @org.apache.avro.specific.AvroGenerated
 public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
@@ -72,8 +70,8 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   @Deprecated public long id;
-  @Deprecated public java.lang.String topic;
-  @Deprecated public java.lang.String name;
+  @Deprecated public String topic;
+  @Deprecated public String name;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -88,16 +86,16 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * @param topic The new value for topic
    * @param name The new value for name
    */
-  public AlertDto(java.lang.Long id, java.lang.String topic, java.lang.String name) {
+  public AlertDto(Long id, String topic, String name) {
     this.id = id;
     this.topic = topic;
     this.name = name;
   }
 
-  public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
+  public SpecificData getSpecificData() { return MODEL$; }
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call.
-  public java.lang.Object get(int field$) {
+  public Object get(int field$) {
     switch (field$) {
     case 0: return id;
     case 1: return topic;
@@ -108,9 +106,9 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
 
   // Used by DatumReader.  Applications should not call.
   @SuppressWarnings(value="unchecked")
-  public void put(int field$, java.lang.Object value$) {
+  public void put(int field$, Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.Long)value$; break;
+    case 0: id = (Long)value$; break;
     case 1: topic = value$ != null ? value$.toString() : null; break;
     case 2: name = value$ != null ? value$.toString() : null; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
@@ -138,7 +136,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * Gets the value of the 'topic' field.
    * @return The value of the 'topic' field.
    */
-  public java.lang.String getTopic() {
+  public String getTopic() {
     return topic;
   }
 
@@ -147,7 +145,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * Sets the value of the 'topic' field.
    * @param value the value to set.
    */
-  public void setTopic(java.lang.String value) {
+  public void setTopic(String value) {
     this.topic = value;
   }
 
@@ -155,7 +153,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * Gets the value of the 'name' field.
    * @return The value of the 'name' field.
    */
-  public java.lang.String getName() {
+  public String getName() {
     return name;
   }
 
@@ -164,7 +162,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * Sets the value of the 'name' field.
    * @param value the value to set.
    */
-  public void setName(java.lang.String value) {
+  public void setName(String value) {
     this.name = value;
   }
 
@@ -172,8 +170,8 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * Creates a new AlertDto RecordBuilder.
    * @return A new AlertDto RecordBuilder
    */
-  public static example.kafka.dto.AlertDto.Builder newBuilder() {
-    return new example.kafka.dto.AlertDto.Builder();
+  public static AlertDto.Builder newBuilder() {
+    return new AlertDto.Builder();
   }
 
   /**
@@ -181,11 +179,11 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing builder to copy.
    * @return A new AlertDto RecordBuilder
    */
-  public static example.kafka.dto.AlertDto.Builder newBuilder(example.kafka.dto.AlertDto.Builder other) {
+  public static AlertDto.Builder newBuilder(AlertDto.Builder other) {
     if (other == null) {
-      return new example.kafka.dto.AlertDto.Builder();
+      return new AlertDto.Builder();
     } else {
-      return new example.kafka.dto.AlertDto.Builder(other);
+      return new AlertDto.Builder(other);
     }
   }
 
@@ -194,11 +192,11 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing instance to copy.
    * @return A new AlertDto RecordBuilder
    */
-  public static example.kafka.dto.AlertDto.Builder newBuilder(example.kafka.dto.AlertDto other) {
+  public static AlertDto.Builder newBuilder(AlertDto other) {
     if (other == null) {
-      return new example.kafka.dto.AlertDto.Builder();
+      return new AlertDto.Builder();
     } else {
-      return new example.kafka.dto.AlertDto.Builder(other);
+      return new AlertDto.Builder(other);
     }
   }
 
@@ -210,8 +208,8 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
     implements org.apache.avro.data.RecordBuilder<AlertDto> {
 
     private long id;
-    private java.lang.String topic;
-    private java.lang.String name;
+    private String topic;
+    private String name;
 
     /** Creates a new Builder */
     private Builder() {
@@ -222,7 +220,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(example.kafka.dto.AlertDto.Builder other) {
+    private Builder(AlertDto.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -242,7 +240,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing AlertDto instance
      * @param other The existing instance to copy.
      */
-    private Builder(example.kafka.dto.AlertDto other) {
+    private Builder(AlertDto other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -272,7 +270,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public example.kafka.dto.AlertDto.Builder setId(long value) {
+    public AlertDto.Builder setId(long value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -292,7 +290,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public example.kafka.dto.AlertDto.Builder clearId() {
+    public AlertDto.Builder clearId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -301,7 +299,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Gets the value of the 'topic' field.
       * @return The value.
       */
-    public java.lang.String getTopic() {
+    public String getTopic() {
       return topic;
     }
 
@@ -311,7 +309,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'topic'.
       * @return This builder.
       */
-    public example.kafka.dto.AlertDto.Builder setTopic(java.lang.String value) {
+    public AlertDto.Builder setTopic(String value) {
       validate(fields()[1], value);
       this.topic = value;
       fieldSetFlags()[1] = true;
@@ -331,7 +329,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'topic' field.
       * @return This builder.
       */
-    public example.kafka.dto.AlertDto.Builder clearTopic() {
+    public AlertDto.Builder clearTopic() {
       topic = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -341,7 +339,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Gets the value of the 'name' field.
       * @return The value.
       */
-    public java.lang.String getName() {
+    public String getName() {
       return name;
     }
 
@@ -351,7 +349,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public example.kafka.dto.AlertDto.Builder setName(java.lang.String value) {
+    public AlertDto.Builder setName(String value) {
       validate(fields()[2], value);
       this.name = value;
       fieldSetFlags()[2] = true;
@@ -371,7 +369,7 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'name' field.
       * @return This builder.
       */
-    public example.kafka.dto.AlertDto.Builder clearName() {
+    public AlertDto.Builder clearName() {
       name = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -382,13 +380,13 @@ public class AlertDto extends org.apache.avro.specific.SpecificRecordBase implem
     public AlertDto build() {
       try {
         AlertDto record = new AlertDto();
-        record.id = fieldSetFlags()[0] ? this.id : (java.lang.Long) defaultValue(fields()[0]);
-        record.topic = fieldSetFlags()[1] ? this.topic : (java.lang.String) defaultValue(fields()[1]);
-        record.name = fieldSetFlags()[2] ? this.name : (java.lang.String) defaultValue(fields()[2]);
+        record.id = fieldSetFlags()[0] ? this.id : (Long) defaultValue(fields()[0]);
+        record.topic = fieldSetFlags()[1] ? this.topic : (String) defaultValue(fields()[1]);
+        record.name = fieldSetFlags()[2] ? this.name : (String) defaultValue(fields()[2]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
-      } catch (java.lang.Exception e) {
+      } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
       }
     }
